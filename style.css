@@ -1,0 +1,16 @@
+#grille{
+    display: flex;
+    flex-wrap: wrap;
+    width: 320px;
+    height: 320px;
+
+    border: 2px solid #333;
+}
+
+.carre{
+    width: calc(100% /16);
+    height: calc(100% /16);
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
