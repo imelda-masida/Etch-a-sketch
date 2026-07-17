@@ -1,23 +1,28 @@
 const conteneur = document.getElementById("grille");
 
-const button = document.createElement("button");
-button.textContent = "Mettez à jour la grille";
-document.body.insertBefore(button, conteneur);
+
+const bouton = document.createElement("button");
+bouton.innerText = "Nouvelle grille / Effacer";
+
+document.body.insertBefore(bouton, conteneur);
 
 
 function creerGrille(taille) {
-    conteneur.innerHTML = "";
+    
+    conteneur.innerHTML = ""; 
 
     const fragment = document.createDocumentFragment();
-    const totalcarres = taille * taille;
+    const totalCarres = taille * taille;
 
-    for (let i = 0; i < totalcarres; i++) {
+    for (let i = 0; i < totalCarres; i++) {
         const carre = document.createElement("div");
         carre.classList.add("carre");
 
+        
         carre.style.width = `calc(100% / ${taille})`;
         carre.style.height = `calc(100% / ${taille})`;
 
+        // Effet de survol permanent (stylo)
         carre.addEventListener("mouseenter", () => {
             carre.classList.add("active");
         });
@@ -26,25 +31,26 @@ function creerGrille(taille) {
     }
 
     conteneur.appendChild(fragment);
-
- }
-
- button.addEventListener("click", () => {
-   let choix = prompt("Entrez le nombre de carres par cote (maximum 100) :");
-
-   if(choix === null) return;
-
-   let nouvelleTaille = parseINT(choix);
-
-   if (isNaN(nouvelleTaille)
-|| nouvelleTaille < 1 || nouvelleTaille > 100) {
-    alert("Veuillez entrer un nomber valide entre 1 et 100");
-    }
-
-    else {
-        creerGrille(nouvelleTaille);
 }
 
- });
 
- creerGrille(16);
+bouton.addEventListener("click", () => {
+    
+    let saisie = prompt("Combien de carrés par côté pour la nouvelle grille ? (Maximum 100) :");
+    
+    
+    if (saisie === null) return; 
+    
+    let nouvelleTaille = parseInt(saisie);
+
+    
+    if (isNaN(nouvelleTaille) || nouvelleTaille < 1 || nouvelleTaille > 100) {
+        alert("Erreur : Veuillez entrer un nombre valide entre 1 et 100 !");
+    } else {
+        
+        creerGrille(nouvelleTaille);
+    }
+});
+
+
+creerGrille(16);
