@@ -5,3 +5,17 @@ body{
     margin-top: 20px;
     background-color: #f0f0f0;
 }
+
+button {
+    margin-bottom: 20px;
+    color: white;
+    background-color: #08c350;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+
+}
+
+button:hover {
+    background-color: #037c31;
+}
