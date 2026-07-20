@@ -19,3 +19,21 @@ button {
 button:hover {
     background-color: #037c31;
 }
+
+#grille {
+    display: flex;
+    flex-wrap: wrap;
+    width: 960px;
+    height: 960px;
+    border: 2px solid #333;
+    background-color: #fff;
+}
+
+.carre {
+     box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    
+    transition: background-color 0.1s ease, filter 0.1s ease; 
+}
+
