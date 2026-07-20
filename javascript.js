@@ -22,7 +22,23 @@ function creerGrille(taille) {
         carre.style.width = `calc(100% / ${taille})`;
          carre.style.height = `calc(100% / ${taille})`;
 
-         carre.dataset.interactions
+         carre.dataset.interactions = 0;
+
+
+         carre.addEventListener("mouseenter", ()
+            => {
+            let passages = parseInt(carre.dataset.interactions);
+
+            if(passages ===0) {
+                const r = nbentierAleatoire(256);
+                const g = nbentierAleatoire(256);
+                const b = nbentierAleatoire(256);
+
+                carre.dataset.couleurOrigine = `${r}, ${g}, ${b}`;
+                carre.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+            }
+         })
 
     }
 }
