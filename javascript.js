@@ -7,3 +7,11 @@ document.body.insertBefore(bouton, conteneur);
 function nbentierAleatoire(max) {
     return Math.floor(Math.random() * max);
 }
+
+
+function creerGrille(taille) {
+    conteneur.innerHTML= "";
+
+    const fragment = document.createDocumentFragment();
+    const totalcarres = taille * taille;
+}
