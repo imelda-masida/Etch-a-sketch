@@ -38,7 +38,14 @@ function creerGrille(taille) {
                 carre.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 
             }
-         })
+
+            if (passages < 10){
+                passages++;
+                carre.dataset.interactions = passages;
+            }
+         });
+
+         fragment.appendChild;
 
     }
 }
